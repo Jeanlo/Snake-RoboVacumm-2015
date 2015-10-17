@@ -1,0 +1,64 @@
+Initialize engine version: 5.2.0f3 (e7947df39b5c)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 10.1]
+    Renderer: Intel(R) HD Graphics 3000 (ID=0x126)
+    Vendor:   Intel
+    VRAM:     128 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: E:\Cosas\Trabajos\PUCMM\1- Programacion Aplicada\Snake RoboVacumm 2015\Snake RoboVacumm 2015 x64_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading E:\Cosas\Trabajos\PUCMM\1- Programacion Aplicada\Snake RoboVacumm 2015\Snake RoboVacumm 2015 x64_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: E:\Cosas\Trabajos\PUCMM\1- Programacion Aplicada\Snake RoboVacumm 2015\Snake RoboVacumm 2015 x64_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading E:\Cosas\Trabajos\PUCMM\1- Programacion Aplicada\Snake RoboVacumm 2015\Snake RoboVacumm 2015 x64_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: E:\Cosas\Trabajos\PUCMM\1- Programacion Aplicada\Snake RoboVacumm 2015\Snake RoboVacumm 2015 x64_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading E:\Cosas\Trabajos\PUCMM\1- Programacion Aplicada\Snake RoboVacumm 2015\Snake RoboVacumm 2015 x64_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: E:\Cosas\Trabajos\PUCMM\1- Programacion Aplicada\Snake RoboVacumm 2015\Snake RoboVacumm 2015 x64_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading E:\Cosas\Trabajos\PUCMM\1- Programacion Aplicada\Snake RoboVacumm 2015\Snake RoboVacumm 2015 x64_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: E:\Cosas\Trabajos\PUCMM\1- Programacion Aplicada\Snake RoboVacumm 2015\Snake RoboVacumm 2015 x64_Data\Managed\System.Core.dll (this message is harmless)
+- Completed reload, in  0.527 seconds
+desktop: 1366x768 40Hz; virtual: 1366x768 at 0,0
+<RI> Initializing input.
+XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
+<RI> Input initialized.
+<RI> Initialized touch support.
+Platform assembly: E:\Cosas\Trabajos\PUCMM\1- Programacion Aplicada\Snake RoboVacumm 2015\Snake RoboVacumm 2015 x64_Data\Managed\System.dll (this message is harmless)
+Setting up 1 worker threads for Enlighten.
+  Thread -> id: 24a8 -> priority: 1 
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 17.791531 ms
+
+Unloading 20 unused Assets to reduce memory usage. Loaded Objects now: 297.
+Total: 9.539886 ms (FindLiveObjects: 0.061168 ms CreateObjectMapping: 0.053779 ms MarkObjects: 9.291105 ms  DeleteObjects: 0.063632 ms)
+
+Platform assembly: E:\Cosas\Trabajos\PUCMM\1- Programacion Aplicada\Snake RoboVacumm 2015\Snake RoboVacumm 2015 x64_Data\Managed\System.Runtime.Serialization.dll (this message is harmless)
+Platform assembly: E:\Cosas\Trabajos\PUCMM\1- Programacion Aplicada\Snake RoboVacumm 2015\Snake RoboVacumm 2015 x64_Data\Managed\System.Xml.dll (this message is harmless)
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 9.220904 ms
+
+Unloading 43 unused Assets to reduce memory usage. Loaded Objects now: 224.
+Total: 0.830911 ms (FindLiveObjects: 0.059116 ms CreateObjectMapping: 0.030379 ms MarkObjects: 0.659721 ms  DeleteObjects: 0.078821 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.297684 ms
+
+Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 297.
+Total: 1.052187 ms (FindLiveObjects: 0.055832 ms CreateObjectMapping: 0.035716 ms MarkObjects: 0.907680 ms  DeleteObjects: 0.050084 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.403650 ms
+
+Unloading 43 unused Assets to reduce memory usage. Loaded Objects now: 224.
+Total: 1.878993 ms (FindLiveObjects: 0.078821 ms CreateObjectMapping: 0.156822 ms MarkObjects: 1.518959 ms  DeleteObjects: 0.119464 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.138038 ms
+
+Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 297.
+Total: 0.899880 ms (FindLiveObjects: 0.068147 ms CreateObjectMapping: 0.036537 ms MarkObjects: 0.736900 ms  DeleteObjects: 0.055421 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.831783 ms
+
+Unloading 43 unused Assets to reduce memory usage. Loaded Objects now: 224.
+Total: 1.607223 ms (FindLiveObjects: 0.097295 ms CreateObjectMapping: 0.051726 ms MarkObjects: 1.336684 ms  DeleteObjects: 0.114948 ms)
+
