@@ -14,7 +14,7 @@ public class DesplazamientoBasura : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-        if(Application.loadedLevel == 3)
+        if(Application.loadedLevel == 4 || Application.loadedLevel == 5)
         {
             if (DateTime.Now.Subtract(UltimaActualizacion) > TimeSpan.FromSeconds(1))
             {

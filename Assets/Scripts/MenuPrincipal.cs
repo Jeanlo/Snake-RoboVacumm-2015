@@ -24,11 +24,17 @@ public class MenuPrincipal : MonoBehaviour
             case "Clasico":
                 Application.LoadLevel(1);
                 break;
-            case "ContraReloj":
-                Application.LoadLevel(3);
+            case "Extremo":
+                Application.LoadLevel(4);
                 break;
             case "Creditos":
                 Application.LoadLevel(2);
+                break;
+            case "Contrareloj":
+                Application.LoadLevel(3);
+                break;
+            case "Power":
+                Application.LoadLevel(5);
                 break;
             case "Musica":
                 if (AudioListener.volume > 0)
