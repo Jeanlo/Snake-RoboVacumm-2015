@@ -5,6 +5,7 @@ using System.Threading;
 
 public class DesplazamientoBola : MonoBehaviour
 {
+    public DateTime TiempoCreacion { get; set; }
     public enum TipoBola
     {
         Movedora,
@@ -34,16 +35,11 @@ public class DesplazamientoBola : MonoBehaviour
     public DateTime TiempoUltimaActualizacion { get; set; }
     public DateTime Tiempo { get; set; }
     public DateTime Tiempo1 { get; set; }
+    public static DateTime TiempoAturdimiento { get; set; }
 
     // Use this for initialization
-    void Start()
+    void Awake()
     {
-        //var aletoriotoriotipo = UnityEngine.Random.Range(0, 10);
-        //if (aletoriotoriotipo <= 7)
-       //     TipoActual = TipoBola.Movedora;
-        //else
-            TipoActual = TipoBola.Rebotadora_Movedora;
-
         DireccionActualX = TipoDireccionX.Este;
         DireccionActualY = TipoDireccionY.Sur;
 
@@ -53,19 +49,16 @@ public class DesplazamientoBola : MonoBehaviour
         Velocidad = new Vector3(aletoriorioX, aletoriotorioY);
 
         TiempoUltimaActualizacion = DateTime.Now;
+        TiempoCreacion = DateTime.Now;
         Tiempo = DateTime.Now;
         Tiempo1 = DateTime.Now; 
-
-
-
-        if (TipoActual == TipoBola.Rebotadora_Movedora)
-        {
-            //this.gameObject.GetComponent<Rigidbody2D>().gravityScale = aletoriotorioC;
-        }
     }
 
     void Update()
     {
+        if (DateTime.Now.Subtract(TiempoCreacion) > TimeSpan.FromSeconds(25))
+            Destroy(this.gameObject);
+
         Desplazarse();
         if(DateTime.Now - Tiempo >= TimeSpan.FromSeconds(0.5) && DireccionActualY==TipoDireccionY.Norte)   
         {
@@ -76,6 +69,9 @@ public class DesplazamientoBola : MonoBehaviour
         {
             this.gameObject.GetComponent<Rigidbody2D>().gravityScale = 0.01f;
         }
+
+        if (Snake.Protegido)
+            GenerarGuantes.PosicionPelota = this.transform.localPosition;
 
     }
 
@@ -118,7 +114,22 @@ public class DesplazamientoBola : MonoBehaviour
                     this.gameObject.GetComponent<Rigidbody2D>().gravityScale = -0.5f;
                 Tiempo = DateTime.Now;
             }
+        }
 
+        if (colisionado.name == "PF_RoboVacumm")
+        {
+            if (Snake.DireccionActual != Snake.TipoDireccion.Reposo)
+                Snake.DireccionAntesAturdimiento = Snake.DireccionActual;
+            Snake.Aturdido = true;
+            Snake.DireccionActual = Snake.TipoDireccion.Reposo;
+            PuntuacionActual.Puntuacion -= 250;
+            TiempoAturdimiento = DateTime.Now;
+        }
+
+        if (colisionado.name == "PF_MiniBot(Clone)")
+        {
+            Destroy(colisionado.gameObject);
+            PuntuacionActual.Puntuacion -= 50;
         }
     }
 }

@@ -58,9 +58,9 @@ public class RecogerBasura_GenerarMini : MonoBehaviour {
                 Muerte.TiempoEspera = DateTime.Now;
             }
 
-            if (Application.loadedLevel == 3)
+            if (Application.loadedLevel == 2 || Application.loadedLevel == 4)
             {
-                var aleatorio = UnityEngine.Random.Range(2, 4);
+                var aleatorio = UnityEngine.Random.Range(2, 6);
                 ContraReloj.TiempoRestante += TimeSpan.FromSeconds(aleatorio);
             }
         }

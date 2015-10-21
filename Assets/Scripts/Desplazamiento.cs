@@ -20,11 +20,31 @@ public class Desplazamiento : Snake {
     void Update()
     {
         if (DireccionActual == TipoDireccion.Reposo)
-            EmpezarDesplazarse();
+        {
+            if (Aturdido)
+            {
+                VolverDesplazarse();
+            }
+            else
+            {
+                EmpezarDesplazarse();
+            }
+
+        }
         else
         {
             Desplazarse();
             EmpezarDesplazarse();
+        }
+    }
+
+    void VolverDesplazarse()
+    {
+        if (DateTime.Now.Subtract(DesplazamientoBola.TiempoAturdimiento) > TimeSpan.FromSeconds(0.8))
+        {
+            DireccionActual = DireccionAntesAturdimiento;
+            Aturdido = false;
+            Desplazarse();
         }
     }
 

@@ -73,6 +73,8 @@
     <Compile Include="Assets\Modelo\Power.cs" />
     <Compile Include="Assets\Modelo\Snake.cs" />
     <Compile Include="Assets\Scripts\ActivarMenuInGame.cs" />
+    <Compile Include="Assets\Scripts\ColorMiniBots.cs" />
+    <Compile Include="Assets\Scripts\ColorSerpiente.cs" />
     <Compile Include="Assets\Scripts\ContraReloj.cs" />
     <Compile Include="Assets\Scripts\Desplazamiento.cs" />
     <Compile Include="Assets\Scripts\DesplazamientoBasura.cs" />
@@ -82,12 +84,15 @@
     <Compile Include="Assets\Scripts\GeneradorBasura.cs" />
     <Compile Include="Assets\Scripts\GeneradorPelota.cs" />
     <Compile Include="Assets\Scripts\GeneradorPower.cs" />
+    <Compile Include="Assets\Scripts\GenerarGuantes.cs" />
     <Compile Include="Assets\Scripts\MenuPrincipal.cs" />
     <Compile Include="Assets\Scripts\Muerte.cs" />
     <Compile Include="Assets\Scripts\PowerScript.cs" />
+    <Compile Include="Assets\Scripts\ProteccionGuante.cs" />
     <Compile Include="Assets\Scripts\PuntuacionActual.cs" />
     <Compile Include="Assets\Scripts\PuntuacionMaxima.cs" />
     <Compile Include="Assets\Scripts\RecogerBasura_GenerarMini.cs" />
+    <Compile Include="Assets\Scripts\SelectorColor.cs" />
     <Compile Include="Assets\Scripts\SonidoGameOver.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />

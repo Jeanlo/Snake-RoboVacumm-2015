@@ -5,31 +5,35 @@ using System;
 public class PowerScript : Power
 {
     public SpriteRenderer Sprite { get; set; }
+    public static int PosibilidadAcelerar { get; set; }
+    public static int PosibilidadCongelar { get; set; }
 
 
     void Awake()
     {
         Sprite = this.gameObject.GetComponent<SpriteRenderer>();
-        var aleatorio = UnityEngine.Random.Range(0, 4);
-        if(aleatorio == 0)
+        var aleatorio = UnityEngine.Random.Range(0, 10);
+        if(aleatorio > 0 && aleatorio <= PosibilidadAcelerar)
         {
             PowerActual = TipoPower.Aceleracion;
             Sprite.color = Color.green;
         }
-
-        if(aleatorio == 1)
-        {
-            PowerActual = TipoPower.Desacelerar;
-            Sprite.color = Color.red;
-        }
-
-        if(aleatorio == 2)
+        else  if (aleatorio > PosibilidadAcelerar && aleatorio <= PosibilidadCongelar)
         {
             PowerActual = TipoPower.CongelarBasura;
             Sprite.color = Color.blue;
         }
-
-        if (aleatorio == 3)
+        else if (aleatorio > PosibilidadCongelar && aleatorio <= 7)
+        {
+            PowerActual = TipoPower.Proteccion;
+            Sprite.color = Color.gray;
+        }
+        else if (aleatorio == 8)
+        {
+            PowerActual = TipoPower.Desacelerar;
+            Sprite.color = Color.red;
+        }
+        else
         {
             PowerActual = TipoPower.Quemar;
             Sprite.color = Color.yellow;
@@ -48,8 +52,10 @@ public class PowerScript : Power
                 ActivarAireAcondicionado();
             if (PowerActual == TipoPower.Quemar)            
                 Quemar();
+            if (PowerActual == TipoPower.Proteccion)
+                Snake.Protegido = true;
 
-                Destroy(this.gameObject);
+            Destroy(this.gameObject);
             Snake.TiempoCambio = TimeSpan.FromSeconds(2);
         }
     }

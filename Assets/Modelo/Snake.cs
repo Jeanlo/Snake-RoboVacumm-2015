@@ -22,6 +22,7 @@ public class Snake : MonoBehaviour {
 
     #region "Atributos"
     public static Transform Padre;
+
     public Vector3 Velocidad { get; set; }
 
     public static Vector3 Aceleracion = new Vector3(1f, 1f, 0);
@@ -35,6 +36,11 @@ public class Snake : MonoBehaviour {
     public static TimeSpan TiempoCambio { get; set; }
     public float XAcelerado { get; set; }
     public float YAcelerado { get; set; }
+
+    public static bool Protegido = false;
+
+    public static bool Aturdido = false;
+    public static TipoDireccion DireccionAntesAturdimiento { get; set; }
 
     #endregion
 
@@ -115,6 +121,8 @@ public class Snake : MonoBehaviour {
     /// </summary>
     public void EmpezarDesplazarse()
     {
+        if (Aturdido)
+            return;
         if (Input.GetKey(KeyCode.None))
             return;
 

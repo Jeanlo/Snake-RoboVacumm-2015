@@ -8,18 +8,18 @@ public class Power : MonoBehaviour {
 
     public enum TipoPower
     {
-        Aceleracion, //Bateria - Hecho
+        Aceleracion, //Bateria
         Proteccion, //Guante
-        CongelarBasura, //Aire acondicionado - Hecho
-        Desacelerar, //Descarga electrica - Hecho
-        Quemar //Fuego - Hecho
+        CongelarBasura, //Aire acondicionado
+        Desacelerar, //Descarga electrica
+        Quemar //Fuego
     }
 
     #endregion
 
     #region "Atributos"
 
-    public TipoPower PowerActual { get; set; }    
+    public TipoPower PowerActual { get; set; }
 
     #endregion
 
@@ -27,14 +27,14 @@ public class Power : MonoBehaviour {
 
     public void Acelerar()
     {
-        Snake.Aceleracion = new Vector3(1.05f, 1.05f, 0);
-        MiniBot.Aceleracion = new Vector3(1.05f, 1.05f, 0);
+        Snake.Aceleracion = new Vector3(1.09f, 1.09f, 0);
+        MiniBot.Aceleracion = new Vector3(1.09f, 1.09f, 0);
     }
 
     public void Desacelerar()
     {
-        Snake.Aceleracion = new Vector3(0.5f, 0.5f, 0);
-        MiniBot.Aceleracion = new Vector3(0.5f, 0.5f, 0);
+        Snake.Aceleracion = new Vector3(0.9f, 0.9f, 0);
+        MiniBot.Aceleracion = new Vector3(0.9f, 0.9f, 0);
     }
 
     public void ActivarAireAcondicionado()
