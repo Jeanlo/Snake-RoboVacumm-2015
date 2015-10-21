@@ -21,19 +21,22 @@ public class MenuPrincipal : MonoBehaviour
     {
         switch (opcion)
         {
+            case "Inicio":
+                Application.LoadLevel(0);
+                break;
             case "Clasico":
                 Application.LoadLevel(1);
+                break;
+            case "Contrareloj":
+                Application.LoadLevel(2);
+                break;
+            case "Power":
+                Application.LoadLevel(3);
                 break;
             case "Extremo":
                 Application.LoadLevel(4);
                 break;
             case "Creditos":
-                Application.LoadLevel(2);
-                break;
-            case "Contrareloj":
-                Application.LoadLevel(3);
-                break;
-            case "Power":
                 Application.LoadLevel(5);
                 break;
             case "Musica":
@@ -44,9 +47,6 @@ public class MenuPrincipal : MonoBehaviour
                 break;
             case "Salir":
                 Application.Quit();
-                break;
-            case "Inicio":
-                Application.LoadLevel(0);
                 break;
         }
     }

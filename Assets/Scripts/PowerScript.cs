@@ -10,12 +10,11 @@ public class PowerScript : Power
     void Awake()
     {
         Sprite = this.gameObject.GetComponent<SpriteRenderer>();
-        var aleatorio = UnityEngine.Random.Range(0, 3);
+        var aleatorio = UnityEngine.Random.Range(0, 4);
         if(aleatorio == 0)
         {
             PowerActual = TipoPower.Aceleracion;
             Sprite.color = Color.green;
-
         }
 
         if(aleatorio == 1)
@@ -29,6 +28,12 @@ public class PowerScript : Power
             PowerActual = TipoPower.CongelarBasura;
             Sprite.color = Color.blue;
         }
+
+        if (aleatorio == 3)
+        {
+            PowerActual = TipoPower.Quemar;
+            Sprite.color = Color.yellow;
+        }
     }
 
     public void OnTriggerEnter2D(Collider2D colisionado)
@@ -41,8 +46,10 @@ public class PowerScript : Power
                 Desacelerar();
             if (PowerActual == TipoPower.CongelarBasura)
                 ActivarAireAcondicionado();
+            if (PowerActual == TipoPower.Quemar)            
+                Quemar();
 
-            Destroy(this.gameObject);
+                Destroy(this.gameObject);
             Snake.TiempoCambio = TimeSpan.FromSeconds(2);
         }
     }

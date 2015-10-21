@@ -10,10 +10,9 @@ public class Power : MonoBehaviour {
     {
         Aceleracion, //Bateria - Hecho
         Proteccion, //Guante
-        CongelarBasura, //Aire acondicionado
+        CongelarBasura, //Aire acondicionado - Hecho
         Desacelerar, //Descarga electrica - Hecho
-        Quemar, //Fuego
-        Aturdir //Pelota beisbol
+        Quemar //Fuego - Hecho
     }
 
     #endregion
@@ -41,6 +40,26 @@ public class Power : MonoBehaviour {
     public void ActivarAireAcondicionado()
     {
         DesplazamientoBasura.TiempoDestruccion = TimeSpan.FromSeconds(8);
+    }
+
+    public void Quemar()
+    {
+        var aleatorioDireccion = UnityEngine.Random.Range(0, 2);
+        if (aleatorioDireccion == 0)
+        {
+            if (Snake.DireccionActual == Snake.TipoDireccion.Norte || Snake.DireccionActual == Snake.TipoDireccion.Sur)
+                Snake.DireccionActual = Snake.TipoDireccion.Este;
+            else
+                Snake.DireccionActual = Snake.TipoDireccion.Norte;
+        }
+
+        if (aleatorioDireccion == 1)
+        {
+            if (Snake.DireccionActual == Snake.TipoDireccion.Norte || Snake.DireccionActual == Snake.TipoDireccion.Sur)
+                Snake.DireccionActual = Snake.TipoDireccion.Oeste;
+            else
+                Snake.DireccionActual = Snake.TipoDireccion.Sur;
+        }
     }
 
     #endregion
