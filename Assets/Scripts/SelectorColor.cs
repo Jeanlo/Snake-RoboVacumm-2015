@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class SelectorColor : MonoBehaviour {
 
-    public Toggle Interuptor { get; set; }
+    public static Toggle Interuptor { get; set; }
     public static Color ColorEscogido { get; set; }
     // Use this for initialization
     void Start () {

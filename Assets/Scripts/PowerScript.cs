@@ -13,22 +13,27 @@ public class PowerScript : Power
     {
         Sprite = this.gameObject.GetComponent<SpriteRenderer>();
         var aleatorio = UnityEngine.Random.Range(0, 10);
-        if(aleatorio > 0 && aleatorio <= PosibilidadAcelerar)
+        if(Application.loadedLevel !=4)
         {
-            PowerActual = TipoPower.Aceleracion;
-            Sprite.color = Color.green;
+            if (aleatorio > 0 && aleatorio <= PosibilidadAcelerar)
+            {
+                PowerActual = TipoPower.Aceleracion;
+                Sprite.color = Color.green;
+            }
+            else if (aleatorio > PosibilidadAcelerar && aleatorio <= PosibilidadCongelar)
+            {
+                PowerActual = TipoPower.CongelarBasura;
+                Sprite.color = Color.blue;
+            }
+            else if (aleatorio > PosibilidadCongelar && aleatorio <= 7)
+            {
+                PowerActual = TipoPower.Proteccion;
+                Sprite.color = Color.gray;
+            }
+
         }
-        else  if (aleatorio > PosibilidadAcelerar && aleatorio <= PosibilidadCongelar)
-        {
-            PowerActual = TipoPower.CongelarBasura;
-            Sprite.color = Color.blue;
-        }
-        else if (aleatorio > PosibilidadCongelar && aleatorio <= 7)
-        {
-            PowerActual = TipoPower.Proteccion;
-            Sprite.color = Color.gray;
-        }
-        else if (aleatorio == 8)
+        
+         if (aleatorio == 8)
         {
             PowerActual = TipoPower.Desacelerar;
             Sprite.color = Color.red;

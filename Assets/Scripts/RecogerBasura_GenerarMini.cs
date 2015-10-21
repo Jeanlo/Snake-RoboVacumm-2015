@@ -2,6 +2,7 @@
 using System.Collections;
 using System;
 using System.Collections.Generic;
+using UnityEngine.UI;
 /// <summary>
 /// Script que sirve para que al colisionar con la basura esta se elimine
 /// y se ingrese un nuevo miniBot a tus filas.
@@ -20,14 +21,25 @@ public class RecogerBasura_GenerarMini : MonoBehaviour {
 
     public GameObject ElTipo;
 
+    public Toggle Dificultad;
+
+    
+    
+
+
     #endregion
 
     #region "Comportamientos"
 
     void Start()
+
     {
+
+        Dificultad = this.gameObject.GetComponent<Toggle>();
+
         TiempoUltimaActualizacion = DateTime.Now;
     }
+    
 
     /// <summary>
     /// Al colisionar una basura con /colisionado/ esta se destruira 
@@ -57,11 +69,20 @@ public class RecogerBasura_GenerarMini : MonoBehaviour {
                 Cuenta++;
                 Muerte.TiempoEspera = DateTime.Now;
             }
-
+            var aleatorio=0;
             if (Application.loadedLevel == 2 || Application.loadedLevel == 4)
             {
-                var aleatorio = UnityEngine.Random.Range(2, 6);
+                if (Facil.InteruptorDificultad.isOn)
+                    aleatorio = UnityEngine.Random.Range(4,6);
+                else if (Medio.InteruptorDificultad.isOn)
+                    aleatorio = UnityEngine.Random.Range(2,2);
+                else if (Dificil.InteruptorDificultad.isOn)
+                    aleatorio = UnityEngine.Random.Range(1,1);
+
+
                 ContraReloj.TiempoRestante += TimeSpan.FromSeconds(aleatorio);
+
+
             }
         }
     }
